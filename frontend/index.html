@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sóraia Doces | Nossa História</title>
+    
+    <!-- Fonte sugerida para combinar com o estilo da logo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Paleta de Cores extraída da logo Logo-Definitiva.jpg */
+        :root {
+            --fundo-creme: #FDF9F5; /* Fundo claro da imagem */
+            --terracota-escuro: #9E3A26; /* Cor do "SÓ", "Doces" e traços */
+            --pessego-claro: #E08E79; /* Cor do "raia" no meio da logo */
+            --texto-padrao: #4A2E2A; /* Marrom escuro para leitura */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--fundo-creme);
+            color: var(--texto-padrao);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--fundo-creme);
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid var(--pessego-claro);
+        }
+
+        header img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: var(--terracota-escuro);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        nav a:hover {
+            color: var(--pessego-claro);
+        }
+
+        /* Seção Principal */
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1, h2 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--terracota-escuro);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        /* Container da História */
+        .sobre-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(158, 58, 38, 0.1);
+            border: 1px solid var(--pessego-claro);
+        }
+
+        .sobre-texto p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        /* Placeholder para o Catálogo Python */
+        .catalogo-preview {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        /* Estilos para os produtos gerados pelo Python (A parte que faltava) */
+        .categoria-menu {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        
+        .categoria-menu h3 {
+            font-size: 2em;
+            border-bottom: 2px dashed var(--pessego-claro);
+            padding-bottom: 5px;
+        }
+        
+        .produto-item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .produto-item h4 {
+            margin: 0;
+            color: var(--terracota-escuro);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .produto-item p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        
+        .preco {
+            font-weight: bold;
+            color: var(--pessego-claro);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--terracota-escuro);
+            color: var(--fundo-creme);
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="Logo-Definitiva(2).jpeg" alt="Logo Sóraia Doces">
+        <nav>
+            <a href="#">Início</a>
+            <a href="#sobre">Nossa História</a>
+            <a href="#cardapio">Cardápio</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre">
+            <h1>Nossa História</h1>
+            <div class="sobre-container">
+                <div class="sobre-texto">
+                    <p>A <strong>Sóraia Doces</strong> nasceu de uma paixão que atravessa gerações. Desde que nos conhecemos por gente, o aroma de bolo assando e o preparo de doces artesanais fazem parte da nossa essência e da nossa casa.</p>
+                    <p>Cada receita carrega dedicação, ingredientes selecionados e o carinho de quem faz bolos para celebrar os melhores momentos da vida. Inspirados pelas grandes confeitarias, mas sem nunca perder o toque acolhedor de mãe, transformamos açúcar e afeto em verdadeiras obras de arte.</p>
+                    <p>Nossa missão é adoçar o seu dia, entregando qualidade e um sabor inesquecível em cada fatia.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção do Cardápio com os dados gerados do Python inseridos -->
+        <section id="cardapio" class="catalogo-preview">
+            <h2>Conheça Nossos Bolos</h2>
+            
+            <!-- Categoria: Bolos por Kg -->
+            <div class="categoria-menu">
+                <h3>Bolos por Kg</h3>
+                <div class="produto-item">
+                    <h4>Bolo de Leite Ninho</h4>
+                    <p>Massa branca fofinha com recheio cremoso de Leite Ninho.</p>
+                    <span class="preco">R$ 88.00</span>
+                </div>
+                <div class="produto-item">
+                    <h4>Bolo Sensação</h4>
+                    <p>Massa de chocolate, recheio de morango e cobertura de chocolate.</p>
+                    <span class="preco">R$ 93.00</span>
+                </div>
+            </div>
+
+            <!-- Categoria: Bolos no Pote -->
+            <div class="categoria-menu">
+                <h3>Bolos no Pote</h3>
+                <div class="produto-item">
+                    <h4>Ninho com Nutella</h4>
+                    <p>Camadas intercaladas de creme de ninho, nutella e bolo.</p>
+                    <span class="preco">R$ 15.00</span>
+                </div>
+                <div class="produto-item">
+                    <h4>Brigadeiro</h4>
+                    <p>Bolo de chocolate com muito recheio de brigadeiro tradicional.</p>
+                    <span class="preco">R$ 15.00</span>
+                </div>
+            </div>
+
+            <!-- Categoria: Doces de Encomenda (Cento) -->
+            <div class="categoria-menu">
+                <h3>Doces de Encomenda (Cento)</h3>
+                <div class="produto-item">
+                    <h4>Brigadeiro Tradicional</h4>
+                    <p>O clássico brigadeiro feito com chocolate nobre.</p>
+                    <span class="preco">R$ 90.00</span>
+                </div>
+                <div class="produto-item">
+                    <h4>Beijinho</h4>
+                    <p>Doce de coco artesanal com cravo.</p>
+                    <span class="preco">R$ 90.00</span>
+                </div>
+                <div class="produto-item">
+                    <h4>Kinder Bueno</h4>
+                    <p>Docinho premium recheado com creme de avelã branco.</p>
+                    <span class="preco">R$ 130.00</span>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sóraia Doces. Feito com ❤️ e Python.</p>
+    </footer>
+
+</body>
+</html>
