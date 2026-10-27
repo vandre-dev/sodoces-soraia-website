@@ -15,3 +15,7 @@ Execução em 27/10/2026, Python 3.12.14, branch `feature/assistente-ia-v2`.
 - **Produção:** nenhuma publicação, merge ou chamada de produção realizada.
 
 Para repetir o navegador, instale as dependências de desenvolvimento e Chromium, inicie o servidor em modo demo e execute `python tests/browser_smoke.py`. Use `TEST_BASE_URL` se a porta for diferente. O diretório de browsers pode ser configurado por `PLAYWRIGHT_BROWSERS_PATH` no download e execução. Políticas de rede precisam permitir os destinos oficiais do download, sem desativar TLS ou contornar o proxy.
+
+## Revisão para Pull Request
+
+Os 19 testes foram reexecutados e passaram. A sintaxe JavaScript e o diff também passaram. Foram verificadas as regras de exclusão de `.env`, `.venv`, arquivos comuns de chave, logs e temporários, preservando `.env.example`. A busca por padrões de chave API/privada nos arquivos rastreados não encontrou ocorrências; isso não é garantia de ausência de qualquer segredo. O autor confirmou separadamente a inicialização local no Windows e a visualização do site e da interface da assistente. As limitações de OpenAI real e navegador automatizado acima permanecem.

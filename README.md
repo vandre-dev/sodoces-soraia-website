@@ -31,6 +31,17 @@ cp .env.example .env
 python -m uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
+No Windows, use o PowerShell do terminal do VS Code, sem precisar ativar o ambiente:
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+if (!(Test-Path .env)) { Copy-Item .env.example .env }
+.\.venv\Scripts\python.exe -m uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
+```
+
+Acesse `http://127.0.0.1:8000`. Frontend e backend iniciam juntos. Para encerrar, pressione **Ctrl+C**. No GitHub Desktop, selecione a branch `feature/assistente-ia-v2` antes de abrir o projeto no VS Code.
+
 Abra o endereço local indicado pelo Uvicorn. O frontend precisa ser servido pelo FastAPI; abrir `index.html` diretamente ou usar apenas `http.server` não fornece as APIs da V2. A documentação interativa da API fica em `/docs`.
 
 O padrão é `CHAT_MODE=demo`. Exemplos: “Quais bolos vocês vendem?”, “Vocês têm algum doce de chocolate?”, “Qual produto custa menos de R$ 50?” e “Como faço uma encomenda?”. O modo demo usa filtros simples, não compreende toda linguagem natural e identifica cada resposta como demonstração sem IA. Não substitui a validação da integração real.
@@ -42,6 +53,12 @@ python backend/gerador_catalogo.py
 ```
 
 Ela imprime o cardápio ou HTML no terminal. Para alterar produtos na V2, edite `backend/catalogo.py` e reinicie o servidor; não copie os blocos manualmente para o frontend.
+
+## Estado da V2
+
+A inicialização do FastAPI, o acesso ao site e a visualização da interface da assistente no Windows foram confirmados pelo autor em teste local. A API e o modo demonstração foram validados automaticamente neste ambiente. A integração real com OpenAI está implementada, mas permanece sem validação com uma chave real; não há comprovação de funcionamento em produção. O teste automatizado em navegador permanece pendente por bloqueio de rede no download do Chromium (detalhes em `VALIDATION.md`).
+
+O `.gitignore` exclui `.env` (preservando `.env.example`), ambientes `.venv`, caches, logs, temporários e arquivos comuns de credenciais. Ele não detecta chaves coladas em arquivos de código nem remove segredos já rastreados: sempre revise o diff antes de enviar commits.
 
 ## Configurar a OpenAI
 

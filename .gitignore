@@ -8,3 +8,18 @@ __pycache__/
 node_modules/
 test-results/
 playwright-report/
+
+# Credenciais locais e arquivos de chave (não protege segredos inseridos no código)
+*.pem
+*.key
+credentials.json
+secrets.json
+# Logs, cobertura e temporários
+*.log
+*.tmp
+*.swp
+*~
+.coverage
+htmlcov/
+.DS_Store
+Thumbs.db
