@@ -145,6 +145,8 @@
             font-size: 0.9em;
         }
     </style>
+    <link rel="stylesheet" href="/chat.css">
+    <script src="/app.js" defer></script>
 </head>
 <body>
 
@@ -174,55 +176,8 @@
         <section id="cardapio" class="catalogo-preview">
             <h2>Conheça Nossos Bolos</h2>
             
-            <!-- Categoria: Bolos por Kg -->
-            <div class="categoria-menu">
-                <h3>Bolos por Kg</h3>
-                <div class="produto-item">
-                    <h4>Bolo de Leite Ninho</h4>
-                    <p>Massa branca fofinha com recheio cremoso de Leite Ninho.</p>
-                    <span class="preco">R$ 88.00</span>
-                </div>
-                <div class="produto-item">
-                    <h4>Bolo Sensação</h4>
-                    <p>Massa de chocolate, recheio de morango e cobertura de chocolate.</p>
-                    <span class="preco">R$ 93.00</span>
-                </div>
-            </div>
-
-            <!-- Categoria: Bolos no Pote -->
-            <div class="categoria-menu">
-                <h3>Bolos no Pote</h3>
-                <div class="produto-item">
-                    <h4>Ninho com Nutella</h4>
-                    <p>Camadas intercaladas de creme de ninho, nutella e bolo.</p>
-                    <span class="preco">R$ 15.00</span>
-                </div>
-                <div class="produto-item">
-                    <h4>Brigadeiro</h4>
-                    <p>Bolo de chocolate com muito recheio de brigadeiro tradicional.</p>
-                    <span class="preco">R$ 15.00</span>
-                </div>
-            </div>
-
-            <!-- Categoria: Doces de Encomenda (Cento) -->
-            <div class="categoria-menu">
-                <h3>Doces de Encomenda (Cento)</h3>
-                <div class="produto-item">
-                    <h4>Brigadeiro Tradicional</h4>
-                    <p>O clássico brigadeiro feito com chocolate nobre.</p>
-                    <span class="preco">R$ 90.00</span>
-                </div>
-                <div class="produto-item">
-                    <h4>Beijinho</h4>
-                    <p>Doce de coco artesanal com cravo.</p>
-                    <span class="preco">R$ 90.00</span>
-                </div>
-                <div class="produto-item">
-                    <h4>Kinder Bueno</h4>
-                    <p>Docinho premium recheado com creme de avelã branco.</p>
-                    <span class="preco">R$ 130.00</span>
-                </div>
-            </div>
+            <div id="produtos" aria-live="polite"><p>Carregando catálogo…</p></div>
+            <noscript>Ative o JavaScript para consultar o catálogo.</noscript>
 
         </section>
     </main>
@@ -231,5 +186,17 @@
         <p>&copy; 2026 Sóraia Doces. Feito com ❤️ e Python.</p>
     </footer>
 
+<button id="chat-toggle" type="button" aria-controls="chat-panel" aria-expanded="false">Assistente Sódoces</button>
+<section id="chat-panel" aria-labelledby="chat-title" hidden>
+    <header class="chat-header"><h2 id="chat-title">Assistente Sódoces</h2><button id="chat-close" type="button" aria-label="Fechar assistente">×</button></header>
+    <p class="chat-notice">Consulte produtos e preços. Não envie dados pessoais. O modo usado será indicado em cada resposta.</p>
+    <div id="chat-messages" role="log" aria-live="polite" aria-relevant="additions" tabindex="0"></div>
+    <p id="chat-status" role="status"></p>
+    <form id="chat-form">
+        <label for="chat-input">Sua pergunta</label>
+        <input id="chat-input" name="message" maxlength="1000" required autocomplete="off" placeholder="Quais doces têm chocolate?">
+        <button id="chat-send" type="submit">Enviar</button>
+    </form>
+</section>
 </body>
 </html>
